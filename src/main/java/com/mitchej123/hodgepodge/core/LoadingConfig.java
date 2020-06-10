@@ -9,6 +9,8 @@ public class LoadingConfig {
     public boolean fixGrassChunkLoads;
     public boolean fixFenceConnections;
     public boolean fixIc2DirectInventoryAccess;
+    public boolean fixIDBasedNBTLoading;
+
     public static Configuration config;
 
     public LoadingConfig(File file) {
@@ -17,6 +19,7 @@ public class LoadingConfig {
         fixGrassChunkLoads = config.get("fixes", "fixGrassChunkLoads", true, "Fix grass spreading from loading chunks").getBoolean();
         fixFenceConnections = config.get("fixes", "fixFenceConnections", true, "Fix fence connections with other types of fence").getBoolean();
         fixIc2DirectInventoryAccess = config.get("fixes", "fixIc2DirectInventoryAccess", true, "Fix IC2's direct inventory access").getBoolean();
+        fixIDBasedNBTLoading = config.get("fixes", "fixIDBasedNBTLoading", true, "Fix ID based loading of item Stacks instead of Name based").getBoolean();
 
         if (config.hasChanged())
             config.save();
