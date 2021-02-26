@@ -9,6 +9,7 @@ public class LoadingConfig {
     public boolean fixGrassChunkLoads;
     public boolean fixFenceConnections;
     public boolean fixIc2DirectInventoryAccess;
+	public boolean dropPickedLootOnDespawn;
     public static Configuration config;
 
     public LoadingConfig(File file) {
@@ -17,6 +18,8 @@ public class LoadingConfig {
         fixGrassChunkLoads = config.get("fixes", "fixGrassChunkLoads", true, "Fix grass spreading from loading chunks").getBoolean();
         fixFenceConnections = config.get("fixes", "fixFenceConnections", true, "Fix fence connections with other types of fence").getBoolean();
         fixIc2DirectInventoryAccess = config.get("fixes", "fixIc2DirectInventoryAccess", true, "Fix IC2's direct inventory access").getBoolean();
+
+        dropPickedLootOnDespawn = config.get("tweaks", "dropPickedLootOnDespawn", true, "Drop picked loot on entity despawn").getBoolean();
 
         if (config.hasChanged())
             config.save();

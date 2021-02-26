@@ -87,8 +87,10 @@ public class HodgepodgeMixinPlugin implements IMixinConfigPlugin {
         IC2_DIRECT_INV_ACCESS("IC2 Direct Inventory Access Fix",
                 () -> config.fixIc2DirectInventoryAccess,
                 "fixic2directinventoryaccess.item.MixinItemCropSeed",
-                "fixic2directinventoryaccess.crop.MixinTileEntityCrop");
-
+                "fixic2directinventoryaccess.crop.MixinTileEntityCrop"),
+        DROP_PICKED_LOOT_ON_DESPAWN("Drop picked loot on entity despawn",
+                () -> config.dropPickedLootOnDespawn,
+                "dropPickedLootOnDespawn.MixinEntityLiving");
 
         private String name;
         private Supplier<Boolean> applyIf;
