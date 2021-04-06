@@ -19,8 +19,9 @@ public class LoadingConfig {
     public boolean fixHungerOverhaul;
     public boolean removeUpdateChecks;
     public boolean preventPickupLoot;
-	public boolean dropPickedLootOnDespawn;
+    public boolean dropPickedLootOnDespawn;
     public boolean installAnchorAlarm;
+    public int nonChatGUIScale;
     // ASM
     public boolean pollutionAsm;
     public boolean cofhWorldTransformer;
@@ -48,6 +49,12 @@ public class LoadingConfig {
 
         preventPickupLoot = config.get("tweaks", "preventPickupLoot", true, "Prevent monsters from picking up loot.").getBoolean();
         dropPickedLootOnDespawn = config.get("tweaks", "dropPickedLootOnDespawn", true, "Drop picked loot on entity despawn").getBoolean();
+        nonChatGUIScale = config.get("tweaks", "nonChatGUIScale", (int) 0, "Distinct scale for non-chat GUIs.\n" +
+            "\t 0 : use same scale as chat [default]\n" +
+            "\t 1 : small\n" +
+            "\t 2 : normal\n" +
+            "\t 3 : large\n" +
+            "\t<0 : Compute maximal scale and reduce by this (original scale of 'Auto' is '-1')").getInt();
 
         speedupChunkCoordinatesHashCode = config.get("speedups", "speedupChunkCoordinatesHashCode", true, "Speedup ChunkCoordinates hashCode").getBoolean();
 

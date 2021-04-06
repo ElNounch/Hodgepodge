@@ -151,6 +151,10 @@ public class HodgepodgeMixinPlugin implements IMixinConfigPlugin {
             Arrays.asList(
                 "wakePersonalAnchors.MixinTileAnchorPassive",
                 "wakePersonalAnchors.MixinTileAnchorPersonal")
+        ),
+        ENABLE_EXTRA_GUI_SCALE("Distinct scale for non-chat GUIs",
+            () -> true,
+            Collections.singletonList("extraGUIScale.MixinScaledResolution")
         );
 
 
